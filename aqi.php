@@ -1,12 +1,19 @@
 <?php
 
-//  The only piece to update below is your API Key. By default you only have one API key, but this tool support multiple API keys if needed to handle greater quantity of requests.
+//  Step 1:  Update your API key for Airnow. 
+//  By default you only have one API key, but this tool supports multiple API keys if needed to handle greater quantity of requests.
 //  You can obtain an Airnow API key by going to https://docs.airnowapi.org/account/request/
 
 $apiKey = array("enter-your-key");
 
 // Example if you have multiple keys
 // $apiKey = array("enter-your-key", "enter-your-key");
+
+
+// Step 2:  Update your API key for Google
+// Google API key to create the shortened URL
+$googleApiKey = "enter-google-api-key";
+
 
 //////////////////// Nothing to modify below here /////////
 
@@ -102,7 +109,7 @@ if (strlen($zipcode) != 5)  {
 		}
 
                 $longUrl = "https://airnow.gov/index.cfm?action=airnow.local_city&zipcode=$zipcode&submit=Go";
-                $url = "https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyDZ5BTQgJ_CmiCVVrlo4Qcav9pKOwJf4gA";
+                $url = "https://www.googleapis.com/urlshortener/v1/url?key=$googleApiKey";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
