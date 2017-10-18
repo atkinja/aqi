@@ -35,7 +35,6 @@ $aqiLevels = array(
 
 // Pull the zipcode from the text message
 $zipcode = $_REQUEST['Body'];
-$zipcode = "94106    ";
 $zipcode = preg_replace('/\s+/', '', $zipcode);
 if (strlen($zipcode) != 5)  {
 	$response = "Sorry, your zip code is not 5 digits long.  Please retry with a 5 digit zipcode.  Thank you.";	
